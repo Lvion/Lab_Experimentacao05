@@ -1,3 +1,4 @@
 dotenv
 requests
 PyYAML
+pandas
