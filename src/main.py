@@ -33,11 +33,13 @@ rest_lengths = []
 
 for _ in range(EXECUTION_TIMES):
     graphql, graphql_time = measure_execution_time(fetch_graphql, config, query)
+    time.sleep(1)
     if graphql:
         graphql_times.append(graphql_time)
         graphql_lengths.append(len(graphql.content))
 
     rest, rest_time = measure_execution_time(fetch_rest, config)
+    time.sleep(1)
     if rest:
         rest_times.append(rest_time)
         rest_lengths.append(len(rest.content))

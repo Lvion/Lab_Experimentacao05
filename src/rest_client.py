@@ -9,7 +9,7 @@ def fetch_rest(_config, max_retries=4, initial_delay=1):
     headers = {
         'Authorization': _config['authorization']
     }
-    
+
     params = {
         'q': 'stars:>1',
         'sort': 'stars',
