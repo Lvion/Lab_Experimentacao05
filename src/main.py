@@ -16,14 +16,13 @@ config = {
     'authorization': f'Bearer {token}'
 }
 
-top_repositories = fetch_graphql(config, query)
-top_repositories2 = fetch_rest(config)
+graphql = fetch_graphql(config, query)
+rest = fetch_rest(config)
 
-for edge in top_repositories:
-    node = edge['node']
-    print(f"Repository: {node['name']}, Owner: {node['owner']['login']}, Stars: {node['stargazerCount']}")
+print(f'GraphQL response length: {len(graphql.content)}')
 
-print("\n===========================================================================================\n")
+# Porque essa diferença discrepante de tamanho?
+# O Graphql por ser uma query mais específica, retorna apenas os dados que foram solicitados.
+# Já o Rest, retorna todos os dados do endpoint, o que pode ser muito mais do que o necessário.
 
-for repo in top_repositories2:
-    print(f"Repository: {repo['name']}, Owner: {repo['owner']['login']}, Stars: {repo['stargazers_count']}")
+print(f'Rest response length: {len(rest.content)}')

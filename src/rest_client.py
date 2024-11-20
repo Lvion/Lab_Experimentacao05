@@ -15,8 +15,7 @@ def fetch_rest(_config):
     response = requests.get(url, headers=headers, params=params)
 
     if response.status_code == 200:
-        data = response.json()
-        return data['items']
+        return response
     else:
         print(f"Query failed to run by returning code of {response.status_code}. {response.text}")
-        return []
+        return None
