@@ -1,3 +1,4 @@
+import time
 from dotenv import load_dotenv
 from graphql_client import fetch_graphql
 from rest_client import fetch_rest
@@ -16,13 +17,15 @@ config = {
     'authorization': f'Bearer {token}'
 }
 
-graphql = fetch_graphql(config, query)
-rest = fetch_rest(config)
+def measure_execution_time(func, *args):
+    start_time = time.time()
+    result = func(*args)
+    end_time = time.time()
+    execution_time = end_time - start_time
+    return result, execution_time
 
-print(f'GraphQL response length: {len(graphql.content)}')
+graphql, graphql_time = measure_execution_time(fetch_graphql, config, query)
+rest, rest_time = measure_execution_time(fetch_rest, config)
 
-# Porque essa diferença discrepante de tamanho?
-# O Graphql por ser uma query mais específica, retorna apenas os dados que foram solicitados.
-# Já o Rest, retorna todos os dados do endpoint, o que pode ser muito mais do que o necessário.
-
-print(f'Rest response length: {len(rest.content)}')
+print(f'GraphQL response Length: {len(graphql.content)}, Execution time: {graphql_time:.4f} seconds')
+print(f'Rest response Length: {len(rest.content)}, Execution time: {rest_time:.4f} seconds')
