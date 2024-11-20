@@ -1,0 +1,6 @@
+schema: https://api.github.com/graphql
+documents: '**/*.graphql'
+extensions:
+  endpoints:
+    default:
+      url: https://api.github.com/graphql

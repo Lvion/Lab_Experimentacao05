@@ -1,0 +1,15 @@
+{
+  search(query: "stars:>0", type: REPOSITORY, first: 10) {
+    edges {
+      node {
+        ... on Repository {
+          name
+          owner {
+            login
+          }
+          stargazerCount
+        }
+      }
+    }
+  }
+}
