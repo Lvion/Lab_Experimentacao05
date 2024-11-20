@@ -18,4 +18,4 @@ def fetch_rest(_config):
         return response
     else:
         print(f"Query failed to run by returning code of {response.status_code}. {response.text}")
-        return None
+        return fetch_rest(_config)

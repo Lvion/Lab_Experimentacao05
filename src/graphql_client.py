@@ -12,4 +12,4 @@ def fetch_graphql(_config, _query):
         return response
     else:
         print(f"Query failed to run by returning code of {response.status_code}. {response.text}")
-        return None
+        return fetch_graphql(_config, _query)

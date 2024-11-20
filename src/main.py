@@ -11,7 +11,7 @@ with open('misc/request.graphql', 'r') as query_file:
     query = query_file.read()
 
 token = os.getenv('GITHUB_TOKEN')
-EXECUTION_TIMES = 10
+EXECUTION_TIMES = 50
 
 config = {
     'url_graphql': 'https://api.github.com/graphql',
