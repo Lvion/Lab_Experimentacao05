@@ -31,7 +31,7 @@
 
 ### G. Quantidade de Medições
 
-- Realizar **10 medições** para cada tipo de consulta.
+- **10 medições** realizadas para cada tipo de API, utiizando a mesma consulta em ambas as abordagens.
 
 ### H. Ameaças à Validade
 
