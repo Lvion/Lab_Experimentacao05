@@ -18,15 +18,15 @@ Não. Ao analisar os tempos (graphql-times e rest-times), percebemos que, em ger
 - A média dos tempos de GraphQL é maior do que a dos tempos de REST.
 - Em alguns casos específicos, o GraphQL foi mais rápido, mas a tendência geral favorece REST em termos de tempo de resposta.
 
-![Gráfico de tamanho](https://github.com/Lvion/Lab_Experimentacao05/blob/main/graph/tamanho.png)
+![Gráfico de tempo](https://github.com/Lvion/Lab_Experimentacao05/blob/main/graph/tempo.png)
 
 ### RQ2: Respostas às consultas GraphQL tem tamanho menor de respostas às consultas REST?
 
 Sim. Ao analisar o tamanho das respostas (graphql-lengths e rest-lengths), observamos que o GraphQL retornou um tamanho constante de 945 bytes, enquanto o REST retornou 57.927 bytes.
 
 Essa diferença se deve à capacidade do GraphQL de selecionar especificamente os dados a serem buscados, algo que o REST não permite.
+![Gráfico de tamanho](https://github.com/Lvion/Lab_Experimentacao05/blob/main/graph/tamanho.png)
 
-![Gráfico de tempo](https://github.com/Lvion/Lab_Experimentacao05/blob/main/graph/tempo.png)
 
 ##  Discussão dos resultados obtidos
 
